@@ -51,6 +51,7 @@ This repository demonstrates a small, production-oriented worker queue that:
 ---
 
 ## Project structure
+```
 cpp-async-worker-queue/
 ├── include/
 │ └── worker_queue.h
@@ -60,7 +61,7 @@ cpp-async-worker-queue/
 │ └── simple_example.cpp
 ├── CMakeLists.txt
 └── README.md
-
+```
 ---
 
 ## Design goals
