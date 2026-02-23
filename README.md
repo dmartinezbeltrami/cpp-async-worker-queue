@@ -13,52 +13,51 @@ not maximum throughput.
 In real-time applications (video pipelines, embedded devices, edge AI systems),
 blocking the main thread to perform background work can cause:
 
-- frame drops
-- latency spikes
-- unstable behavior under load
+- frame drops  
+- latency spikes  
+- unstable behavior under load  
 
 A common pattern is to offload non-critical work to a background thread,
 while **bounding memory usage and execution time**.
 
 This repository demonstrates a small, production-oriented worker queue that:
 
-- runs work on a dedicated thread
-- enforces a maximum queue size (backpressure)
-- starts and stops cleanly
-- avoids hidden background activity on shutdown
+- runs work on a dedicated thread  
+- enforces a maximum queue size (backpressure)  
+- starts and stops cleanly  
+- avoids hidden background activity on shutdown  
 
 ---
 
 ## Features
 
-- Single background worker thread
-- Bounded queue (prevents unbounded memory growth)
-- Thread-safe task submission
-- Graceful start / stop semantics
-- No external dependencies
-- Suitable for embedded Linux environments
+- Single background worker thread  
+- Bounded queue (prevents unbounded memory growth)  
+- Thread-safe task submission  
+- Graceful start / stop semantics  
+- No external dependencies  
+- Suitable for embedded Linux / Windows environments  
 
 ---
 
 ## Typical use cases
 
-- Alert or event processing
-- Logging
-- Asynchronous uploads
-- Background housekeeping tasks
-- Any work that must not block a real-time loop
+- Alert or event processing  
+- Logging  
+- Asynchronous uploads  
+- Background housekeeping tasks  
+- Any work that must not block a real-time loop  
 
 ---
 
 ## Project structure
-```
+
+```text
 cpp-async-worker-queue/
 ├── include/
-│ └── worker_queue.h
-├── src/
-│ └── worker_queue.cpp
+│   └── worker_queue.h
 ├── examples/
-│ └── simple_example.cpp
+│   └── simple_example.cpp
 ├── CMakeLists.txt
 └── README.md
 ```
